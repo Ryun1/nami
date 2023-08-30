@@ -1313,7 +1313,9 @@ export const createAccount = async (name, password, accountIndex = null) => {
   const dRepKeyPub = Buffer.from(dRepKey.to_public().as_bytes()).toString(
     'hex'
   );
-  const stakeKeyPubHex = Buffer.from(stakeKeyPub.as_bytes()).toString('hex');
+  const stakeKeyPubHex = Buffer.from(stakeKeyPub.as_bytes()).toString(
+    'hex'
+  );
   // cip-95 -----------------------------
 
   accountKey.free();
@@ -1398,11 +1400,6 @@ export const createAccount = async (name, password, accountIndex = null) => {
         rewardAddr: rewardAddrTestnet,
       },
       [NETWORK_ID.preprod]: {
-        ...networkDefault,
-        paymentAddr: paymentAddrTestnet,
-        rewardAddr: rewardAddrTestnet,
-      },
-      [NETWORK_ID.sancho]: {
         ...networkDefault,
         paymentAddr: paymentAddrTestnet,
         rewardAddr: rewardAddrTestnet,
